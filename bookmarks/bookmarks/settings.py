@@ -129,3 +129,6 @@ EMAIL_HOST_USER = 'vetalboy94@gmail.com'
 EMAIL_HOST_PASSWORD = 'Konrad1994'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
