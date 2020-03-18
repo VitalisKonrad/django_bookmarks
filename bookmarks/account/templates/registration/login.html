@@ -16,4 +16,12 @@
             <p><input type="submit" value="Log-in"></p>
         </form>
         </div>
-    {% endblock %}
+        <div class="social">
+            <ul>
+            <li class="facebook"><a href="{% url "social:begin" "facebook" %}">
+            Войти с помощью Facebook</a></li>
+            <li class="facebook"><a href="{% url "social:begin" "vk-oauth2" %}">
+            Войти с помощью VK</a></li>
+            </ul>
+        </div>
+{% endblock %}

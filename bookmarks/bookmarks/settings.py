@@ -25,7 +25,11 @@ SECRET_KEY = 'x+_@spi#u6(k@sb4hrd94p=cp4fm_+$5qv#q!60r6uv(eqszv6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'zamenakart.ops',
+    '127.0.0.1',
+    'localhost',
+]
 
 
 # Application definition
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +56,22 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.vk.VKOAuth2',
+]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2259456437693695' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '503008d271189eb3300dcf4d32f31877' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7363801' # Facebook App ID
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'k7ngIjhI3Mx20xCJjAbS' # Facebook App Secret
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
 
 TEMPLATES = [
     {
