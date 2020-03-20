@@ -2,8 +2,17 @@
 {% block title %} Главная {% endblock%}
 {% block content %}
     <h1>Главная страница</h1>
-    <p>Добро пожаловать на вашу страницу.
+
+    {% with total_images_created=request.user.images_created.count %}
+    <p>Добро пожаловать на вашу страницу. {{ total_images_created }} изображений {{ total_images_created|pluralize }}</p>
+    {% endwith %}
+    <p>Drag the following button to your bookmarks toolbar to bookmark images from other websites →
+        <a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">В закладки</a>
+    </p>
+    <p>
         Вы можете <a href="{% url "edit" %}">изменить ваш профиль</a>
         или <a href="{% url "password_change" %}">изменить пароль.</a>
     </p>
 {% endblock %}
+
+
