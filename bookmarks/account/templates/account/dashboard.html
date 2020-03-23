@@ -6,7 +6,7 @@
     {% with total_images_created=request.user.images_created.count %}
     <p>Добро пожаловать на вашу страницу. {{ total_images_created }} изображений {{ total_images_created|pluralize }}</p>
     {% endwith %}
-    <p>Drag the following button to your bookmarks toolbar to bookmark images from other websites →
+    <p>Переместите кнопку в поле закладок браузера и скачивайте картинки с других сайтов (пока не работает) →
         <a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">В закладки</a>
     </p>
     <p>
